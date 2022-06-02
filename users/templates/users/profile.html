@@ -1,0 +1,67 @@
+{% extends 'base/main.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %} Profile {% endblock %}
+
+{% block sliders %}
+{% endblock %}
+{% block content %}
+<div class="container px-5">
+
+    <div class="content-section">
+        <div class="media">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1>Profile Info</h1>
+                    <img src="{{ user.profile.profile_pic.url }}" alt="" class="rounded-circle account-img rounded-img">
+                    <div class="media-body">
+                        <h3 class="account-heading mt-2">Username: @{{ user.username }}</h3>
+                        
+                        <p class="text-secondary">Fullname: {{ user.profile.first_name}} {{ user.profile.last_name }}</p>
+                        <p class="text-secondary">Email: {{ user.email }}</p>
+                        <p class="text-secondary">Phone: {{ user.profile.mobile}}</p>
+                        
+
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div>
+                        <h2>Your Summary:</h2>
+                        <p>Course: {{ user.profile.application.course }}</p>
+                        {% for application in applications %}
+
+                        <p class="text-secondary">Course Applied For: {{ application.course }}</p>
+
+                        <p class="text-secondary">Your Grade: {{ application.grade }}</p>
+                        {% empty %}
+                        <p>You have not yet applied for any course!</p>
+                        <p><a href="{% url 'program' %}">Check Programs Here!</a></p>
+
+                        {% endfor %}
+
+                        <h2>Advisory Info</h2>
+                        {% for advice in advices %}
+                        <p>{{ advice.name }}</p>
+                        <p>{{ advice.context }}</p>
+                        {% empty %}
+                        <p>Apply for a course first to view your advice</p>
+                        {% endfor %}
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <form class="form" enctype="multipart/form-data" action="" method="POST">
+
+            <div class="form-group">
+                <a href="{% url 'edit' %}" class="btn btn-outline-info">Edit Profile Info</a>
+                <!-- <button class="btn btn-outline-info" type="submit">Update</button> -->
+            </div>
+            <br>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

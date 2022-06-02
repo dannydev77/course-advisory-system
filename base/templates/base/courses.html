@@ -1,0 +1,42 @@
+{% extends 'base/main.html' %}
+{% load static %}
+{% block title %} Courses listed {% endblock %}
+{% block sliders %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="container px-5">
+    <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);"
+         aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Courses</li>
+        </ol>
+    </nav>
+
+    <form class="form-inline" action="{% url 'search' %}">
+        <input class="form-control mr-sm-2 mb-2" type="search" name="query" placeholder="Search for courses or school..." aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    <h1 class="mt-3">Courses Available</h1>
+
+    {% for course in courses %}
+    <ul class="list-group list-group mb-3">
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+                <div class="fw-bold">{{ course.name }}</div>
+                {% for school in course.schools.all %}
+                <p>{{ school }}</p>
+                {% endfor %}
+            </div>
+            <a href="{% url 'apply' course.id %}" class="badge bg-primary rounded-pill">Apply</a>
+        </li>
+    </ul>
+    {% empty %}
+    <p>No courses</p>
+    {% endfor %}
+</div>
+
+{% endblock %}

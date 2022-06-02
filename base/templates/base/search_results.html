@@ -1,0 +1,36 @@
+{% extends 'base/main.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %} Search results {% endblock %}
+
+{% block sliders %}
+{% endblock %}
+{% block content %}
+<div class="container px-5">
+    <h2>Search results</h2>
+    <hr class="horizontal">
+    <div class="results">
+        {% for course in my_courses %}
+        <ul class="list-group list-group-numbered mb-3">
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                    <div class="fw-bold">{{ course.name }}</div>
+                    {% for school in course.schools.all %}
+                    <p>{{ school }}</p>
+                    {% endfor %}
+                </div>
+                <a href="{% url 'apply' course.id %}" class="badge bg-primary rounded-pill">Apply</a>
+            </li>
+        </ul>
+        {% empty %}
+        <p>Ooops! Results Not Found..</p>
+        {% endfor %}
+    </div>
+
+
+</div>
+
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

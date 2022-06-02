@@ -1,0 +1,118 @@
+{% extends 'base/main.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="mt-4 mb-4 section ">
+    <!-- Quote/testimonial aside-->
+    <aside class="text-center bg-gradient-primary-to-secondary">
+        <div class="container px-5">
+            <div class="row gx-5 justify-content-center">
+                <div class="col-xl-8">
+                    <div class="h2 fs-1 text-white mb-4">"An intuitive solution to a common problem that we all face,
+                        wrapped up in our advisory site!"
+                    </div>
+                    <img src="{% static 'images/student2.jpg' %}" alt="student" style="height: 10rem"/>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <div class="container px-5">
+
+
+        <h2 style="text-align: center; " >Testimonials</h2>
+
+        <p style="font-size: 60px; text-align: center">What students say!</p>
+
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card mb-3 ">
+                    <img src="{% static 'images/student3.jpg' %}" class="card-img-top rounded-img center" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">James Maina</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="{% url 'program' %}" class="btn btn-primary">View Courses</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card mb-3 ">
+                    <img src="{% static 'images/student3.jpg' %}" class="card-img-top rounded-img center" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Cool Kid</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="{% url 'program' %}" class="btn btn-primary">View Courses</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card mb-3 ">
+                    <img src="{% static 'images/student3.jpg' %}" class="card-img-top rounded-img center" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Pati Pati</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="{% url 'program' %}" class="btn btn-primary">View Courses</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card mb-3 ">
+                    <img src="{% static 'images/student3.jpg' %}" class="card-img-top rounded-img center " alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Lucy Mwende</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="{% url 'program' %}" class="btn btn-primary">View Courses</a>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <!-- Basic features section-->
+    <section class="bg-light">
+        <div class="container px-5">
+            <div class="row gx-5 align-items-center justify-content-center justify-content-lg-between">
+                <div class="col-12 col-lg-5">
+                    <h2 class="display-4 lh-1 mb-4">Enter a new age of Course Advisory for all students!</h2>
+                    <p class="lead fw-normal text-muted mb-5 mb-lg-0">Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit. Maxime mollitia,
+                        molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
+                        numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
+                        optio, eaque rerum! Provident similique accusantium nemo autem.</p>
+                </div>
+                <div class="col-sm-8 col-md-6">
+                    <div class="px-5 px-sm-0"><img class="img-fluid rounded-circle"
+                                                   src="https://source.unsplash.com/u8Jn2rzYIps/900x900" alt="..."/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!--call to action-->
+    <section class="cta">
+        <div class="cta-content">
+            <div class="container px-5">
+                <h2 class="text-white display-1 lh-1 mb-4">
+                    Stop waiting.
+                    <br/>
+                    Apply Today.
+                    <br>
+                    Get adviced
+                </h2>
+                <a class="btn btn-outline-light py-3 px-4 rounded-pill" href="{% url 'program' %} ">Get Started Today</a>
+            </div>
+        </div>
+    </section>
+</div>
+
+{% endblock %}

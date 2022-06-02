@@ -1,0 +1,22 @@
+{% extends 'base/main.html' %}
+{% load static %}
+{% block title %} Email success {% endblock %}
+
+{% block sliders %}
+{% endblock %}
+{% block content %}
+
+<section class="section">
+    <div class="container">
+        <H2>{{ request.user.username }},Your application was successful.You will receive an email soon!</H2>
+
+        <h4><a class="btn btn-outline-info" href="{% url 'program' %}">Return</a></h4>
+
+    </div>
+</section>
+
+
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

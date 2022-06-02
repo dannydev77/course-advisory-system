@@ -1,0 +1,27 @@
+{% extends 'base/main.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %} Edit profile {% endblock %}
+{% block sliders %}
+{% endblock %}
+{% block content %}
+<div class="container">
+    
+<div class="content-section">
+    <form class="form" enctype="multipart/form-data" action="" method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Profile Info</legend>
+            {{ user_form|crispy }}
+            {{ profile_form|crispy }}
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-outline-info mt-3" type="submit">Update</button>
+        </div>
+        <br>
+    </form>
+</div>
+</div>
+
+{% endblock %}

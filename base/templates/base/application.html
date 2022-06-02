@@ -1,0 +1,43 @@
+{% extends 'base/main.html' %}
+{% load static %}
+{% block title %} Application {% endblock %}
+{% load crispy_forms_tags %}
+
+{% block sliders %}
+{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container px-5">
+
+        <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);"
+        aria-label="breadcrumb">
+       <ol class="breadcrumb">
+           <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+           
+           <li class="breadcrumb-item"><a href="{% url 'program' %}">Courses</a></li>
+           <li class="breadcrumb-item active" aria-current="page">Application</li>
+       </ol>
+   </nav>
+        <h1>Fill in the details to proceed</h1>
+        <!-- <div class="field">
+            <label for="">Course</label>
+            <input type="text" name="course" id="course"> 
+
+        </div> -->
+        <form class="form" action="{% url 'success' %}" method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4"> Details  </legend>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Submit</button>
+            </div>
+            <br>
+        </form>
+       
+
+    </div>
+</section>
+{% endblock %}

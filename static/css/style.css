@@ -1,0 +1,48 @@
+
+
+body {
+
+    height: 100vh;
+    line-height: 1.4;
+
+}
+
+body::before {
+    display: block;
+    content: '';
+    height: 100px;
+}
+
+.form__wrapper {
+    display: flex;
+    height: 80vh;
+    align-items: center;
+    justify-content: center;
+}
+.content-section {
+
+}
+.content-logs {
+    display: block;
+}
+.form {
+    width: 600px;
+    
+}
+.slider {
+    height: 80px;
+}
+
+.rounded-img {
+    width: 150px;
+    height:150px;
+    border-radius: 50%;
+    align-items: center;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+}
