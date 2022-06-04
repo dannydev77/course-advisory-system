@@ -1,0 +1,38 @@
+{% block content %}
+
+<section>
+    <h1>Profile Information</h1>
+    {% for profile in profiles %}
+    <img src="{{ user.profile.profile_pic.path }}" alt="profile" height="100px" width="100px">
+    <br>
+
+    <h3>Username: @{{ user.username }}</h3>
+
+    <p>Fullname: {{ user.profile.first_name}} {{ user.profile.last_name }}</p>
+    <p>Email: {{ user.email }}</p>
+    <p>Phone: {{ user.profile.mobile}}</p>
+    {% endfor %}
+    <div>
+        <h2>Your Summary:</h2>
+        <p>Course:</p>
+        {% for application in applications %}
+
+        <p>Course Applied For: {{ application.course }}</p>
+
+        <p>Your Grade: {{ application.grade }}</p>
+        {% empty %}
+        <p>You have not yet applied for any course!</p>
+        <p><a href="{% url 'program' %}">Check Programs Here!</a></p>
+
+        {% endfor %}
+
+        <h2>Advisory Info</h2>
+        {% for advice in advices %}
+        <p>{{ advice.name }}</p>
+        <p>{{ advice.context }}</p>
+        {% empty %}
+        <p>Apply for a course first to view your advice</p>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
