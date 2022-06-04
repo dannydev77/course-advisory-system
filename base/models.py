@@ -15,7 +15,7 @@ class School(models.Model):
 class Course(models.Model):
     name = models.CharField(max_length=200)
     schools = models.ManyToManyField(School)
-    advice = models.ManyToManyField('Advice')
+    # advice = models.ManyToManyField('Advice')
 
     def __str__(self) -> str:
         return self.name
