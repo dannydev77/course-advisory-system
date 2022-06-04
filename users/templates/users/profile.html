@@ -27,7 +27,7 @@
                 <div class="col-md-6">
                     <div>
                         <h2>Your Summary:</h2>
-                        <p>Course: {{ user.profile.application.course }}</p>
+                        <p>Course:</p>
                         {% for application in applications %}
 
                         <p class="text-secondary">Course Applied For: {{ application.course }}</p>
@@ -46,6 +46,11 @@
                         {% empty %}
                         <p>Apply for a course first to view your advice</p>
                         {% endfor %}
+
+                        <div class="report">
+                            
+                <a href="{% url 'get_pdf' %}" class="btn btn-outline-info">Get Report</a>
+                        </div>
 
 
                     </div>
