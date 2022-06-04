@@ -36,9 +36,9 @@ def apply_for_course(request, course_id):
             application.course = course
             application.name = request.user
             application.save()
-            messages.success(request, f"Your Application was successfull!.")
+            # messages.success(request, f"Your Application was successfull!.")
 
-            return redirect('home')
+            # return redirect('home')
     else:
         form = ApplicationForm()
     context = {'form': form, 'course': course}
