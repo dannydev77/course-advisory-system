@@ -32,10 +32,11 @@ def apply_for_course(request, course_id):
     if request.method == 'POST':
         form = ApplicationForm(request.POST)
         if form.is_valid():
-            application = form.save(commit=False)
-            application.course = course
-            application.name = request.user
-            application.save()
+            # application = form.save(commit=False)
+            # application.course = course
+            # application.name = request.user
+            # application.save()
+            form.save()
             # messages.success(request, f"Your Application was successfull!.")
 
             # return redirect('home')
@@ -46,7 +47,7 @@ def apply_for_course(request, course_id):
 
 
 def on_success(request):
-    template = render_to_string('base/email_template.html', {'name': request.user.username})
+    template = render_to_string('base/email_template.html', {'name': request.user.username, })
     email = EmailMessage(
         'Thank you for choosing to work with us.',
         template,

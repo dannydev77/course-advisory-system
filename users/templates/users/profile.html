@@ -28,9 +28,10 @@
                     <div>
                         <h2>Your Summary:</h2>
                         <p>Course:</p>
+
                         {% for application in applications %}
 
-                        <p class="text-secondary">Course Applied For: {{ application.course }}</p>
+                        <p class="text-secondary">Course Applied For: {{ user.profile.application.course }}</p>
 
                         <p class="text-secondary">Your Grade: {{ application.grade }}</p>
                         {% empty %}
