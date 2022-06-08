@@ -99,9 +99,9 @@ def pdf_report(request):
     """
     applications = Application.objects.all()
     advices = Advice.objects.all()
-    profiles = Profile.objects.all()
+    # profiles = Profile.objects.all()
     template_path = 'users/pdf_report.html'
-    context = {'applications': applications, 'advices': advices, 'profiles': profiles}
+    context = {'applications': applications, 'advices': advices,}
 
     response = HttpResponse(content_type='application/pdf')
     response['Content-Disposition'] = 'filename="student_report.pdf"'
