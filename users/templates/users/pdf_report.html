@@ -2,7 +2,6 @@
 
 <section>
     <h1>Profile Information</h1>
-    {% for profile in profiles %}
     <img src="{{ user.profile.profile_pic.path }}" alt="profile" height="100px" width="100px">
     <br>
 
@@ -11,7 +10,7 @@
     <p>Fullname: {{ user.profile.first_name}} {{ user.profile.last_name }}</p>
     <p>Email: {{ user.email }}</p>
     <p>Phone: {{ user.profile.mobile}}</p>
-    {% endfor %}
+
     <div>
         <h2>Your Summary:</h2>
         <p>Course:</p>
